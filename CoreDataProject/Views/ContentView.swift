@@ -19,7 +19,8 @@ struct ContentView: View {
         // predicate: NSPredicate(format: "name < %@", "M")
         // predicate: NSPredicate(format: "universe in %@", ["Star Wars", "Aliens"])
         // predicate: NSPredicate(format: "name BEGINSWITH %@", "E")
-        predicate: NSPredicate(format: "name BEGINSWITH[c] %@", "e")
+        // predicate: NSPredicate(format: "name BEGINSWITH[c] %@", "e")
+        predicate: NSPredicate(format: "NOT name BEGINSWITH[c] %@", "e")
     ) var ships: FetchedResults<Ship>
     
     var body: some View {

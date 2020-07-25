@@ -14,6 +14,8 @@
 		FAF440D224CB471D00BB55CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF440D124CB471D00BB55CC /* Assets.xcassets */; };
 		FAF440D524CB471E00BB55CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF440D424CB471E00BB55CC /* Preview Assets.xcassets */; };
 		FAF440D824CB471E00BB55CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF440D624CB471E00BB55CC /* LaunchScreen.storyboard */; };
+		FAF440E324CBC49100BB55CC /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF440E124CBC49100BB55CC /* Movie+CoreDataClass.swift */; };
+		FAF440E424CBC49100BB55CC /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF440E224CBC49100BB55CC /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FAF440D424CB471E00BB55CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAF440D724CB471E00BB55CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAF440D924CB471E00BB55CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAF440E124CBC49100BB55CC /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FAF440E224CBC49100BB55CC /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		FAF440DF24CBC3E200BB55CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAF440E124CBC49100BB55CC /* Movie+CoreDataClass.swift */,
+				FAF440E224CBC49100BB55CC /* Movie+CoreDataProperties.swift */,
 				FAF440CC24CB471C00BB55CC /* CoreDataProject.xcdatamodeld */,
 			);
 			path = Models;
@@ -168,6 +174,8 @@
 				FAF440C924CB471C00BB55CC /* AppDelegate.swift in Sources */,
 				FAF440CB24CB471C00BB55CC /* SceneDelegate.swift in Sources */,
 				FAF440D024CB471C00BB55CC /* ContentView.swift in Sources */,
+				FAF440E324CBC49100BB55CC /* Movie+CoreDataClass.swift in Sources */,
+				FAF440E424CBC49100BB55CC /* Movie+CoreDataProperties.swift in Sources */,
 				FAF440CE24CB471C00BB55CC /* CoreDataProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

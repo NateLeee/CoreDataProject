@@ -8,16 +8,40 @@
 
 import SwiftUI
 
-struct Student: Hashable {
-    let name: String
-}
+
 
 struct ContentView: View {
-    let students = [Student(name: "Harry Potter"), Student(name: "Hermione Granger")]
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Wizard.entity(), sortDescriptors: []) var wizards: FetchedResults<Wizard>
     
     var body: some View {
-        List(students, id: \.self) { student in
-            Text(student.name)
+        VStack {
+            List {
+                ForEach(wizards, id: \.self) { wizard in
+                    Text(wizard.name ?? "Unknown Wizard")
+                }
+            }
+            
+            
+            Button(action: {
+                let newWizard = Wizard(context: self.moc)
+                newWizard.name = "Jack"
+                // self.moc.insert(newWizard) // Is this neccesary?
+            }) {
+                Text("Add")
+            }
+            .padding(.bottom, 27)
+            
+            Button(action: {
+                do {
+                    try self.moc.save()
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            }) {
+                Text("Save")
+            }
+            .padding(.bottom, 27)
         }
     }
 }

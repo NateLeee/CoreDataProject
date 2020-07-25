@@ -19,6 +19,9 @@ extension Movie {
 
     @NSManaged public var title: String?
     @NSManaged public var director: String?
-    @NSManaged public var year: Int16
+    @NSManaged public var year: Int16 // year is not optional, which means Core Data will assume a default value for us.
 
+    public var wrappedTitle: String {
+        title ?? "Unknown Title"
+    }
 }

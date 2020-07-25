@@ -16,7 +16,8 @@ struct ContentView: View {
         entity: Ship.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Ship.name, ascending: true)],
         // predicate: NSPredicate(format: "universe == %@", "Star Wars")
-        predicate: NSPredicate(format: "name < %@", "M")
+        // predicate: NSPredicate(format: "name < %@", "M")
+        predicate: NSPredicate(format: "universe in %@", ["Star Wars", "Aliens"])
     ) var ships: FetchedResults<Ship>
     
     var body: some View {

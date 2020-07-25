@@ -60,11 +60,11 @@
 			children = (
 				FAF440C824CB471C00BB55CC /* AppDelegate.swift */,
 				FAF440CA24CB471C00BB55CC /* SceneDelegate.swift */,
-				FAF440CF24CB471C00BB55CC /* ContentView.swift */,
+				FAF440DF24CBC3E200BB55CC /* Models */,
+				FAF440E024CBC3ED00BB55CC /* Views */,
 				FAF440D124CB471D00BB55CC /* Assets.xcassets */,
 				FAF440D624CB471E00BB55CC /* LaunchScreen.storyboard */,
 				FAF440D924CB471E00BB55CC /* Info.plist */,
-				FAF440CC24CB471C00BB55CC /* CoreDataProject.xcdatamodeld */,
 				FAF440D324CB471E00BB55CC /* Preview Content */,
 			);
 			path = CoreDataProject;
@@ -76,6 +76,22 @@
 				FAF440D424CB471E00BB55CC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FAF440DF24CBC3E200BB55CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAF440CC24CB471C00BB55CC /* CoreDataProject.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAF440E024CBC3ED00BB55CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF440CF24CB471C00BB55CC /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

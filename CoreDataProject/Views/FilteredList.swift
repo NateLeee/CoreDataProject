@@ -20,7 +20,6 @@ struct FilteredList<T: NSManagedObject, ContentGeneric: View>: View {
     
     var body: some View {
         List(results, id: \.self) { result in
-            // Text("\(result.wrappedFirstName) \(result.wrappedLastName)")
             self.content(result)
         }
     }

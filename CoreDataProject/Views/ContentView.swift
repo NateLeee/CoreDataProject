@@ -18,10 +18,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack(spacing: 9) {
-                FilteredList("firstName", firstNameFilterString) { (singer: Singer) in
+                FilteredList(
+                    filterKey: "firstName",
+                    filterString: firstNameFilterString,
+                    sortDescriptors: [
+                        NSSortDescriptor(keyPath: \Singer.firstName, ascending: true),
+                        NSSortDescriptor(keyPath: \Singer.lastName, ascending: true),
+                    ]
+                ) { (singer: Singer) in
                     Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
                 }
-                    // .padding(.bottom, 27)
                 
                 Button("Add Examples") {
                     let taylor = Singer(context: self.moc)

@@ -18,8 +18,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack(spacing: 9) {
-                FilteredList("firstName", firstNameFilterString)
-                    .padding(.bottom, 27)
+                FilteredList("firstName", firstNameFilterString) { (singer: Singer) in
+                    Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+                }
+                    // .padding(.bottom, 27)
                 
                 Button("Add Examples") {
                     let taylor = Singer(context: self.moc)

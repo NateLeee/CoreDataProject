@@ -10,9 +10,12 @@ import SwiftUI
 
 struct FilteredList: View {
     var fetchRequest: FetchRequest<Singer>
+    var singers: FetchedResults<Singer> {
+        fetchRequest.wrappedValue
+    }
     
     var body: some View {
-        List(fetchRequest.wrappedValue, id: \.self) { singer in
+        List(singers, id: \.self) { singer in
             Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
         }
     }
@@ -23,8 +26,6 @@ struct FilteredList: View {
             sortDescriptors: [],
             predicate: NSPredicate(format: "firstName BEGINSWITH[c] %@", filterString)
         )
-        
-        // result = fe
     }
 }
 

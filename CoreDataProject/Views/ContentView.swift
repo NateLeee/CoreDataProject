@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack(spacing: 9) {
-                FilteredList(firstNameFilterString)
+                FilteredList("firstName", firstNameFilterString)
                     .padding(.bottom, 27)
                 
                 Button("Add Examples") {

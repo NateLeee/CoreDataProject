@@ -20,17 +20,17 @@ struct FilteredList: View {
         }
     }
     
-    init(_ filterString: String) {
+    init(_ filterKey: String, _ filterString: String) {
         fetchRequest = FetchRequest<Singer>(
             entity: Singer.entity(),
             sortDescriptors: [],
-            predicate: NSPredicate(format: "firstName BEGINSWITH[c] %@", filterString)
+            predicate: NSPredicate(format: "%K BEGINSWITH[c] %@", filterKey, filterString)
         )
     }
 }
 
 struct FilteredList_Previews: PreviewProvider {
     static var previews: some View {
-        FilteredList("A")
+        FilteredList("lastName", "A")
     }
 }

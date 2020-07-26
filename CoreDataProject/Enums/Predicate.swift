@@ -9,5 +9,5 @@
 import Foundation
 
 enum Predicate {
-    case beginsWith
+    case beginsWith(string: String)
 }

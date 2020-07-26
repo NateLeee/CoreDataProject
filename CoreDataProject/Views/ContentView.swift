@@ -19,7 +19,8 @@ struct ContentView: View {
         VStack {
             VStack(spacing: 9) {
                 FilteredList(
-                    predicateString: "firstName BEGINSWITH[c] '\(firstNameFilterString)'",
+                    // predicateString: "firstName BEGINSWITH[c] '\(firstNameFilterString)'",
+                    predicateEnum: .beginsWith(string: "firstName BEGINSWITH[c] '\(firstNameFilterString)'"),
                     sortDescriptors: [
                         NSSortDescriptor(keyPath: \Singer.firstName, ascending: true),
                         NSSortDescriptor(keyPath: \Singer.lastName, ascending: true),

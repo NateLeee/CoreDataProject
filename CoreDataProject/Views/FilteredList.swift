@@ -25,14 +25,22 @@ struct FilteredList<T: NSManagedObject, ContentGeneric: View>: View {
     }
     
     init(
-        // filterKey: String,
-        // filterString: String,
-        predicateString: String,
+        // predicateString: String,
+        predicateEnum: Predicate,
         sortDescriptors: [NSSortDescriptor],
         @ViewBuilder content: @escaping (T) -> ContentGeneric) {
+        
+        var predicateString = ""
+        
+        switch predicateEnum {
+        case .beginsWith(let str):
+            predicateString = str
+        }
+        
         fetchRequest = FetchRequest<T>(
             entity: T.entity(),
             sortDescriptors: sortDescriptors,
+            // predicate: NSPredicate(format: predicateString)
             predicate: NSPredicate(format: predicateString)
         )
         self.content = content

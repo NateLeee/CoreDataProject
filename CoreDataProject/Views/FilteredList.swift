@@ -9,8 +9,20 @@
 import SwiftUI
 
 struct FilteredList: View {
+    var result: FetchedResults<Singer>
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+    
+    init(_ filterString: String) {
+        let fetchRequest = FetchRequest<Singer>(
+            entity: Singer.entity(),
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "firstName BEGINSWITH[c] %@", filterString)
+        )
+        
+        // result = fe
     }
 }
 

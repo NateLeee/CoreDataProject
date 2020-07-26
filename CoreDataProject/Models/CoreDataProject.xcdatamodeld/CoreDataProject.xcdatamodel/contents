@@ -2,10 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Candy" representedClassName="Candy" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="candy" inverseEntity="Country"/>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
         <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="shortName" optional="YES" attributeType="String"/>
+        <relationship name="candy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candy" inverseName="origin" inverseEntity="Candy"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="shortName"/>
@@ -38,7 +40,7 @@
         <element name="Ship" positionX="-54" positionY="9" width="128" height="73"/>
         <element name="Wizard" positionX="-54" positionY="18" width="128" height="58"/>
         <element name="Singer" positionX="-54" positionY="9" width="128" height="73"/>
-        <element name="Candy" positionX="-45" positionY="18" width="128" height="58"/>
-        <element name="Country" positionX="-36" positionY="27" width="128" height="73"/>
+        <element name="Candy" positionX="-45" positionY="18" width="128" height="73"/>
+        <element name="Country" positionX="-36" positionY="27" width="128" height="88"/>
     </elements>
 </model>

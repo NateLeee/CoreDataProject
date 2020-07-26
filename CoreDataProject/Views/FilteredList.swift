@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct FilteredList: View {
-    var result: FetchedResults<Singer>
+    var fetchRequest: FetchRequest<Singer>
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(fetchRequest.wrappedValue, id: \.self) { singer in
+            Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+        }
     }
     
     init(_ filterString: String) {
-        let fetchRequest = FetchRequest<Singer>(
+        fetchRequest = FetchRequest<Singer>(
             entity: Singer.entity(),
             sortDescriptors: [],
             predicate: NSPredicate(format: "firstName BEGINSWITH[c] %@", filterString)
@@ -28,6 +30,6 @@ struct FilteredList: View {
 
 struct FilteredList_Previews: PreviewProvider {
     static var previews: some View {
-        FilteredList()
+        FilteredList("A")
     }
 }
